@@ -1,6 +1,6 @@
 // Fetch data from wishes.json and display it
 function loadWishList() {
-    fetch('wishes.json')
+    fetch('js/wishes.json')
         .then(response => response.json())
         .then(wishData => {
             const wishListElement = document.getElementById('wishList');

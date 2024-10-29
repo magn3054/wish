@@ -11,7 +11,7 @@ document.getElementById('wishForm').addEventListener('submit', function(event) {
     };
 
     // Send data to the PHP script
-    fetch('addwish.php', {
+    fetch('./addwish.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
