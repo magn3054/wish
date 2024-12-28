@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Wish</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 50px;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        label, input, textarea, button {
+            display: block;
+            margin: 10px 0;
+            width: 100%;
+        }
+        textarea {
+            height: 100px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Insert a Wish</h1>
+    <form method="POST" action="insertwish.php">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required>
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" required></textarea>
+        <label for="url">URL (Optional):</label>
+        <input type="url" name="url" id="url">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
