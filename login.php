@@ -2,7 +2,7 @@
 session_start(); // Start a session to track the login state
 
 // Database connection
-$pdo = new PDO("mysql:host=mdamsgaard.dk;dbname=mdamsgaard_dk_db", "username", "password");
+$pdo = new PDO("mysql:host=mysql20.unoeuro.com;dbname=mdamsgaard_dk_db", "username", "password");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the input values
