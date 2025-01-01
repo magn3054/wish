@@ -1,14 +1,65 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magnus' Ønsker</title>
-    <script defer src="js/loadwish.js"></script>
+    <title>Wishes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
-    <h1>Min ønskeseddel</h1>
-    <ul id="wishList"></ul>
-    <a href="addwish.html">Add New Item</a>
+    <h1>Wishes</h1>
+    <ul id="wishes-list"></ul>
+
+    <script>
+        // Fetch wishes from the server
+        async function loadWishes() {
+            try {
+                const response = await fetch('retrieve_wishes.php');
+                const data = await response.json();
+
+                const wishesList = document.getElementById('wishes-list');
+                wishesList.innerHTML = ''; // Clear the list
+
+                if (data.error) {
+                    wishesList.innerHTML = `<li>Error: ${data.error}</li>`;
+                    return;
+                }
+
+                // Display wishes
+                data.forEach(wish => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = wish.wish;
+                    wishesList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Error fetching wishes:', error);
+                document.getElementById('wishes-list').innerHTML = `<li>Error loading wishes.</li>`;
+            }
+        }
+
+        // Load wishes on page load
+        window.onload = loadWishes;
+    </script>
 </body>
 </html>
