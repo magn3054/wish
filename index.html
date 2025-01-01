@@ -35,7 +35,7 @@
         // Fetch wishes from the server
         async function loadWishes() {
             try {
-                const response = await fetch('retrieve_wishes.php');
+                const response = await fetch('retrievewishes.php');
                 const data = await response.json();
 
                 const wishesList = document.getElementById('wishes-list');
