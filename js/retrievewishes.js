@@ -13,13 +13,14 @@ async function loadWishes() {
         }
 
         // Display wishes
+        const tableBody = document.getElementById('wishes-table-body');
         data.forEach(wish => {
-            const listItem = document.createElement('li');
+            const listItem = tableBody.createElement('tr');
             listItem.innerHTML = `
-                <strong>Name:</strong> ${wish.navn} <br>
-                <strong>Size:</strong> ${wish.str} <br>
-                <strong>Color:</strong> ${wish.farve} <br>
-                <strong>URL:</strong> <a href="${wish.url}" target="_blank">${wish.url}</a>
+                <td>${wish.navn}</td>
+                <td>${wish.str}</td>
+                <td>${wish.farve}</td>
+                <td><a href="${wish.url}" target="_blank">${wish.url}</a></td>
             `;
             wishesList.appendChild(listItem);
         });
