@@ -8,8 +8,8 @@ try {
     $pdo = new PDO($dsn, $config['db_user'], $config['db_pass']);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Fetch all wishes from the database
-    $stmt = $pdo->query("SELECT wish FROM wishes"); // Adjust the table/column name if necessary
+    // Fetch all wishes from the database (adjust column names)
+    $stmt = $pdo->query("SELECT navn, str, farve, url FROM wishes"); // Use correct column names here
     $wishes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // Return the wishes as JSON
