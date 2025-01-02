@@ -2,7 +2,7 @@
 // Load configuration
 $config = include(__DIR__ . '/config.php');
 
-// Database connection using PDO
+// Database connection using PDO.
 try {
     $dsn = "mysql:host={$config['db_host']};dbname={$config['db_name']}";
     $pdo = new PDO($dsn, $config['db_user'], $config['db_pass']);

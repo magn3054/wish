@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($username === 'magn3054' && password_verify($password, $storedHash)) {
         // Store session data and redirect to the insert wish page
         $_SESSION['username'] = $username;
-        header('Location: insertwish.html'); // Redirect to insertwish.html
+        header('Location: insertwish.html'); // Redirect to insertwish.html.
         exit();
     } else {
         $error = "Invalid username or password.";

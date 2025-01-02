@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $password = $_POST['password']; // Get the password from user input
+    $password = $_POST['password']; // Get the password from user input.
     if (!empty($password)) {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         echo "Hashed Password: " . $hashedPassword;

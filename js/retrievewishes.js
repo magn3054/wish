@@ -5,7 +5,7 @@ async function loadWishes() {
         const data = await response.json();
 
         const wishesList = document.getElementById('wishes-list');
-        wishesList.innerHTML = ''; // Clear the list
+        wishesList.innerHTML = ''; // Clear the list.
 
         if (data.error) {
             wishesList.innerHTML = `<li>Error: ${data.error}</li>`;
